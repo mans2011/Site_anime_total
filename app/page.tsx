@@ -14,13 +14,19 @@ import { userStorage } from '../lib/userStorage';
 import Header from '../components/Header';
 import AnimeCard from '../components/AnimeCard';
 
+type User = any;  // ou interface User { id: number; name: string; ... }
+
 export default function Home() {
   const [featuredAnime, setFeaturedAnime] = useState<Anime | null>(null);
   const [trendingAnimes, setTrendingAnimes] = useState<Anime[]>([]);
   const [seasonalAnimes, setSeasonalAnimes] = useState<Anime[]>([]);
   const [topAnimes, setTopAnimes] = useState<Anime[]>([]);
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState<User | null>(null);
+
+  // resto do código...
+
+
 
   useEffect(() => {
     loadHomeData();

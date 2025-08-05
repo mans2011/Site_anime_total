@@ -1,9 +1,8 @@
-
 import AnimeDetail from './AnimeDetail';
+
 export const revalidate = 60;
+
 export async function generateStaticParams() {
-  // Return a comprehensive list of anime IDs for static generation
-  // These include popular anime IDs and a range to cover more possibilities
   return [
     { id: '1' },
     { id: '5' },
@@ -135,6 +134,6 @@ export async function generateStaticParams() {
   ];
 }
 
-export default function AnimePage({ params }: { params: { id: string } }) {
+export default async function AnimePage({ params }: any) {
   return <AnimeDetail animeId={parseInt(params.id)} />;
 }

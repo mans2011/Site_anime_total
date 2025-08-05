@@ -19,7 +19,7 @@ export default function TrendingPage() {
   const loadTrending = async (page: number) => {
     try {
       setLoading(true);
-      const response = await jikanApi.getTopAnimes(page, 24);
+      const response = await jikanApi.getTopAnimes(page, 24) as { data: Anime[], pagination?: { has_next_page: boolean } };
       
       if (page === 1) {
         setTrendingAnimes(response.data || []);
@@ -35,6 +35,7 @@ export default function TrendingPage() {
       setLoading(false);
     }
   };
+
 
   const loadMore = () => {
     if (hasNextPage && !loading) {
