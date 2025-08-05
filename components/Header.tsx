@@ -70,7 +70,7 @@ export default function Header() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center space-x-8">
             <Link href="/" className="flex items-center">
-              <span className="text-red-600 text-2xl font-['Pacifico'] font-bold">AnimeFlix</span>
+              <span className="text-red-600 text-2xl font-['Pacifico'] font-bold">AnimesZone</span>
             </Link>
             
             <nav className="hidden md:flex space-x-6">
